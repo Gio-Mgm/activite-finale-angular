@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+
+$shadow-color: rgba(68,68,68,0.5);
+$font-color: #484848;
+$bg-color: #d2d2d2;
+$navbar-color: #313131;
+$nav-active-color: #232323;
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url(../src/assets/fonts/JosefinSans/JosefinSans-Regular.ttf);
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+
+  background-color: $bg-color;
+}
+
+body, h1, h2, h3 {
+  color: $font-color;
+}
+
+h1 {
+  font-weight: 600;
+  text-shadow: 4px 4px 4px lighten($shadow-color, 10%);
+}
+
+.navbar-inverse {
+  background-color: $navbar-color;
+  .navbar-nav{
+    .active {
+      a {
+        background-color: $nav-active-color;
+      }
+    }
+  }
+}
+
+.list-group-item {
+  padding: 20px;
+}
+
+.list-group-item-heading {
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 3px $shadow-color;
+}
+
+.btn {
+  margin: 10px 10px 0 10px;
+  font-weight: 900;
+}
+
+#btn-in-jumbotron {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shadow {
+  box-shadow: 5px 5px 5px $shadow-color;
+}
+
+#main-container {
+  margin-top: 50px;
+  @media screen and (max-width: 769px) {
+    margin-top: 90px;
+  }
+}

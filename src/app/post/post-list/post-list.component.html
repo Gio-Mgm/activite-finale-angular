@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1
+              col-xs-12">
+    <h1>Vos Articles</h1>
+
+    <!-- Div masquée si l'array posts n'est pas vide -->
+    <div  class="jumbotron text-center"
+          *ngIf="getEmpty() && waitForPosts">
+      <h2>
+        Il n'y a aucun article pour le moment
+      </h2>
+      <button id="btn-in-jumbotron" class="btn btn-success"
+              style="margin-top: 10px"
+              (click)="onNewPost()">
+        Ajouter un article
+        <span class="glyphicon glyphicon-pencil" style="margin-left: 10px;"></span>
+      </button>
+    </div>
+    <!-- /.Fin div masquée -->
+
+    <div class="list-group">
+      <app-post-list-item *ngFor="let post of posts; let i = index"
+                          [i]="i"
+                          [post]="post"></app-post-list-item>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+<li [ngClass]="{'shadow': true,
+                'list-group-item ': true,
+                'list-group-item-success': getLoveIts() === 'green',
+                'list-group-item-danger': getLoveIts() === 'red'}">
+  <span class="pull-right ">{{ post.created_at | date: 'EEEE d MMMM y hh:mm a' }}</span>
+  <h2 [ngStyle]="{color: getLoveIts()}" class="list-group-item-heading">
+    <i>{{ post.title }}</i>
+  </h2>
+  <p class="list-group-item-text">{{ post.content }}</p>
+  <h4 class="list-group-item-text"><i>Love-O-Meter </i>
+    <span class="glyphicon glyphicon-signal"></span>&nbsp;
+    <span *ngIf="post.loveIts > 0">+</span>{{ post.loveIts }}
+  </h4>
+  <div class="row hidden-xs">
+    <button type="button"
+            class="btn btn-success"
+            (click)="onAddLoveIt()">Love It !
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+  </button>
+    <button type="button"
+            class="btn btn-danger"
+            (click)="onRemoveLoveIt()">Don't love It...
+      <span class="glyphicon glyphicon-thumbs-down"></span>
+    </button>
+    <button type="button"
+            class="btn btn-danger pull-right"
+            (click)="onDeletePost(i)">Supprimer le post
+      <span class="glyphicon glyphicon-trash"></span></button>
+  </div>
+  <!-- vue mobile -->
+  <div class="visible-xs">
+    <button type="button"
+            class="btn btn-md btn-success"
+            (click)="onAddLoveIt()">
+      <span class="glyphicon glyphicon-thumbs-up"></span>
+    </button>
+    <button type="button"
+            class="btn btn-md btn-danger"
+            (click)="onRemoveLoveIt()">
+      <span class="glyphicon glyphicon-thumbs-down"></span>
+    </button>
+    <button type="button"
+            class="btn btn-md btn-danger pull-right"
+            (click)="onDeletePost(i)">
+      <span class="glyphicon glyphicon-trash"></span></button>
+  </div>
+  <!-- /.vue mobile -->
+</li><br/>
